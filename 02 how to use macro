@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+# define fun(a,b) a+b	
+
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main( ) {
+int var=3;
+int core=5;
+printf("%d\n",fun(var,core));
+	
+	return 0;
+}
