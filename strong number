@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i, result ;
+    int count = 0; 
+    int j;
+    printf("Enter the number: ");
+    scanf("%d", &i);
+    int k = i;
+    int fact=1;
+    int m;
+
+
+
+    while (i != 0) {
+        j = i % 10;
+      for( m=1;m<=j;m++){
+      	fact*=m;
+      	
+	  }
+	  result=result+fact;
+	  fact=1;
+	  i=i/10;
+}
+
+
+    if (result == k) {
+        printf("Correct: %d satisfies the condition.\n", k);
+    } else {
+        printf("Incorrect: %d does not satisfy the condition.\n", k);
+    }
+
+   
+
+ return 0;
+}
