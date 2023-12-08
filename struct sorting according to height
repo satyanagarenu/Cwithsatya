@@ -1,0 +1,53 @@
+#include<stdio.h>
+using namespace std;
+#include<string.h>
+struct students{
+	int height;
+	char name[100];
+	char rollnumber[20];
+};
+struct students getinformation(){
+	struct students s1;
+	printf("enter the name\n");
+	scanf("%s",s1.name);
+	printf("enter the rollnumber\n");
+	scanf("%s",s1.rollnumber);
+	printf("enter the height\n");
+	scanf("%d",&s1.height);
+	return s1;
+	
+}
+void calculateheight(struct students *s){
+	int i,j;
+	struct students temp;
+	for(i=0;i<5;i++){
+		for(j=i;j<5;j++){
+			if(s[i].height>s[j].height){
+				temp=s[j];
+				s[j]=s[i];
+				s[i]=temp;
+			}
+			
+		}
+	}
+}
+void display(struct students*s){
+	int i;
+	for(i=0;i<5;i++){
+	
+	printf("%s\n",s[i].name);
+	printf("%s\n",s[i].rollnumber);
+	printf("%d\n",s[i].height);
+}
+	
+}
+
+int main(){
+	struct students s[5];
+	int i;
+	for(i=0;i<5;i++){
+		s[i]=getinformation();
+	}
+	calculateheight(s);
+	display(s);
+}
